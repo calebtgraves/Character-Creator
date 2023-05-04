@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Grenze&family=Grenze+Gotisch&display=swap");
+
+#root{
+  height:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  /* background-color:#852424;
+  background: linear-gradient(130deg, #852424 0%, #591818 100%); */
+  background-image:url('images/leatherTexture.png');
+  background-size:50%;
+  overflow-y:scroll;
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Grenze"
+}
+body,html{
+  height:100%;
+}
+.container{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:0px 20px;
+}
+header{
+  display:flex;
+  justify-content:space-between;
+}
+.tabs{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.tab{
+  padding:5px 30px;
+  border:0px;
+  font-size:1.2em;
+  color:#f8d775;
+}
+.tab:hover{
+  cursor:pointer;
+}
+.closed{
+  background-color:#911a1a;
+}
+.open{
+  background-color:#7e1212;
+}
+.userButton{
+  height:50px;
+  width:50px;
+  background-image:url("images/User.svg");
+  background-size:contain;
+  background-repeat:no-repeat;
+  border:none;
+  border-radius:3px;
+  z-index:11;
+}
+.userButton:hover,.new{
+  cursor:pointer;
+}
+.userButton:active,.new:active{
+  filter:brightness(75%);
+}
+.folder{
+  background-color:#faefc9;
+  border-radius:0px 5px 0px 0px;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  padding-top:60px;
+  flex:1;
+  background-image:url("images/DndPage.png")
+}
+.header-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:20px 0px;
+}
+.header-content h1{
+  margin-right:10px;
+  color:#f8d775;
+  font-weight:300;
+}
+.page{
+  height:100%;
+  max-width:85%;
+  min-width:600px;
+  background-color:transparent;
+  /* box-shadow:#aaa 0px 0px 10px 0px; */
+  flex:1;
+  display:flex;
+  flex-wrap:wrap;
+  align-content:flex-start;
+}
+.tall{
+  height:1000px;
+  width:50%;
+  background-color:pink;
+}
+.new{
+  height:60px;
+  width:60px;
+  border-radius:100%;
+  position:absolute;
+  bottom:40px;
+  right:80px;
+  border:none;
+  box-shadow:#aaa 0px 0px 10px 0px;
+  background-color:#911a1a;
+  background-image:url('images/plus.png');
+  background-repeat:no-repeat;
+  background-position:50%;
+  background-size:70%;
+}
+.loginContainer{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+.login-box{
+  height:75%;
+  width:85%;
+  display:flex;
+  flex-direction:column;
+}
+.login-box h1{
+  color:#f8d775;
+  font-size:3em;
+  font-weight: 300;
+}
+.decor-top,.decor-bottom{
+  display:flex;
+  flex:1;
+}
+.login-middle{
+  flex:20;
+  display:flex;
+}
+.decor-top-left{
+  background-image:url('images/coverDecorTopLeft.svg');
+  flex:1;
+  background-repeat:no-repeat;
+  background-size:950px;
+}
+.decor-top-right{
+  background-image:url('images/coverDecorTopRight.svg');
+  flex:1;
+  background-repeat:no-repeat;
+  background-size:950px;
+  background-position-x:100%;
+}
+.decor-bottom-left{
+  background-image:url('images/coverDecorBottomLeft.svg');
+  flex:1;
+  background-repeat:no-repeat;
+  background-size:950px;
+  background-position-y:100%;
+}
+.decor-bottom-right{
+  background-image:url('images/coverDecorBottomRight.svg');
+  background-repeat:no-repeat;
+  flex:1;
+  background-size:950px;
+  background-position-x:100%;
+  background-position-y:100%;
+}
+.decor-mid-left{
+  background-image:url('images/coverDecorTopLeft.svg');
+  background-repeat:no-repeat;
+  flex:1;
+  background-size:950px;
+  background-position-y:100%;
+}
+.decor-mid-right{
+  background-image:url('images/coverDecorTopRight.svg');
+  background-repeat:no-repeat;
+  flex:1;
+  background-size:950px;
+  background-position-y:100%;
+  background-position-x:100%;
+}
+.none-yet{
+  flex:1;
+  text-align:center;
+  font-size:2em;
+}
+.login-label{
+  display:flex;
+  flex-direction:column;
+  color:#f8d775;
+  width:100%;
+  max-width:250px;
+}
+.login-input{
+  max-width:250px;
+  width:100%;
+  padding:5px;
+  cursor:pointer;
+}
+.login-form{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.login-button-container{
+  display:flex;
+  width:100%;
+  max-width:250px;
+  margin-top:20px;
+}
+.login-spacer{
+  width:10%;
+}
+.user-menu-container{
+  position:fixed;
+  width:100%;
+  height:100%;
+  margin-left:-20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:transparent;
+  z-index:10;
+}
+.user-menu-box{
+  padding:10px;
+  height:525px;
+  width:450px;
+  background-image:url('images/leatherTexture.png');
+  background-size:50%;
+  display:flex;
+  flex-direction:column;
+  border-radius:10px;
+  box-shadow:#000000 0px 0px 10px 0px;
+}
+.user-menu-box h1{
+  color:#f8d775;
+  font-weight: 300;
+}
+.user-menu-form{
+  flex:2;
+}
+.user-middle{
+  display:flex;
+}
+.full{
+  border-radius:0px;
+  align-items:flex-start;
+  justify-content:left;
+  padding:0;
+}
+.bookmark{
+  display:flex;
+  width:100px;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+.bookmark-top{
+  background-color:#911a1a;
+  flex:6;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:center;
+  padding-top:8px;
+  overflow:scroll;
+}
+.bookmark-bottom{
+  margin-top:-1px;
+  flex:1;
+  background-image:url('images/bookmarkBottom.svg');
+  background-repeat:no-repeat;
+  display:flex;
+  flex-direction: column-reverse;
+  padding:5px;
+  overflow:scroll;
+}
+.character-image{
+  width:80px;
+  height:80px;
+  min-height:80px;
+  background-image:url('images/User.svg');
+  background-repeat: no-repeat;
+  background-position:50%;
+}
+.stats-container{
+  flex:1;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  margin-bottom:10px;
+}
+.stat{
+  width:100%;
+  height:80px;
+  display:flex;
+  flex-direction:column;
+  padding:0px 10px 30px 10px;
+  align-items: center;
+}
+.stat p{
+  color:#f8d775;
+}
+.stat-input{
+  height:100%;
+  width:100%;
+  text-align:center;
+  font-size:2.5em;
+  padding-bottom:15px;
+  border-radius:5px;
+  padding-left:15px;
+}
+.stat-modifier{
+  margin-top:-12px;
+  width:30px;
+  height:20px;
+  border:2px black;
+  border-style:inset;
+  border-radius:100%;
+  text-align:center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding-bottom:5px;
+}
+::-webkit-scrollbar{
+  display:none;
+}
+.stat-input::-webkit-outer-spin-button,
+.stat-input::-webkit-inner-spin-button {
+  width:10px;
+  margin-top:15px;
+}
+.character-info{
+  height:100%;
+  width:100%;
+  align-items:flex-start;
+  display:flex;
+}
+.top-bar{
+  width:100%;
+  display:flex;
+}
+.character-name-label{
+  flex:1;
+  margin:0 10px;
+  display:flex;
+  flex-direction:column;
+}
+.character-name-input{
+  width:100%;
+  height:100%;
+  font-size:2.5em;
+  padding-left:5px;
+}
+.top-info{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.top-info-bar{
+  display:flex;
+  flex:1;
+}
+.top-info-bar-input{
+  flex:1;
+  margin-right:10px;
+}
+.top-info-bar-input input{
+  width:100%;
+}
+.character-container{
+  background-color:transparent;
+  height:160px;
+  flex-basis:calc(100%/3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.character-button{
+  padding:10px;
+  flex:1;
+  height:100%;
+  display:flex;
+  align-items:flex-start;
+  cursor:pointer;
+}
+.character-button-image{
+  height:100%;
+  aspect-ratio:1/1;
+  border:2px black;
+  border-style:inset;
+  background-image:url('images/User.svg')
+}
+.character-button-info{
+  flex:1;
+  height:100%;
+  display:flex;
+  margin-left:5px;
+}
+.character-button-info p{
+  font-size:1.5em;
+  font-weight:400;
+  text-overflow:ellipsis;
+}
+
+
+@media only screen and (max-width: 1080px) {
+  .character-container{
+    flex-basis:50%;
+  }
+}
+@media only screen and (max-height: 650px) {
+  .login-middle{
+    flex:10;
+  }
+}
+@media only screen and (max-height: 400px) {
+  .login-middle{
+    flex:5;
+  }
+  .bookmark-top{
+    flex:10;
+  }
+  .bookmark-bottom{
+    flex:2;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .login-form{
+    flex:2;
+  }
+}
+@media only screen and (max-width: 740px){
+  .top-bar{
+    flex-direction:column;
+  }
+  .top-info{
+    margin-left:10px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .login-form{
+    flex:4;
+  }
+  .container{
+    padding:0;
+  }
+}
